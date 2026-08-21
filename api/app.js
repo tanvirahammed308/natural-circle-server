@@ -20,7 +20,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || '*',
+    origin: process.env.CLIENT_URL ,
     credentials: true,
   })
 );
@@ -56,7 +56,7 @@ app.use(async (req, res, next) => {
   }
 });
 
-app.get('/api/health', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ success: true, message: 'Organic Food API is running' });
 });
 
